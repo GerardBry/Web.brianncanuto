@@ -1,0 +1,350 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1f1f1f;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #1e90ff;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 100px 0;
+    background-color: #181818;
+    text-align: left;
+}
+
+.portfolio h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.portfolio-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    background-color: #1e90ff;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #181818;
+}
+
+.footer .footer-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer .thank-you {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer .socials .social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #1f1f1f;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer .socials .social-icon:hover {
+    background-color: #1e90ff;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* 3D Section Styles */
+.three-d-section {
+    padding: 80px 0;
+    background-color: #181818;
+    text-align: center;
+}
+
+.three-d-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.three-d-works {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.work-item {
+    width: 250px;
+    height: 250px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.work-item::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: #1e90ff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.work-item:hover::before {
+    opacity: 1;
+}
+
+/* Fade-in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Style for the slider container */
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation buttons */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.slider-button.left {
+    left: 10px;
+}
+
+.slider-button.right {
+    right: 10px;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* General Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .portfolio h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .item {
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Smaller Screens (Mobile Devices) */
+@media only screen and (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .portfolio h2 {
+        font-size: 24px;
+    }
+
+    .item {
+        width: 100%;
+        height: 200px;
+        font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Tablet (Portrait) */
+@media only screen and (max-width: 1024px) {
+    .portfolio h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-items {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .item {
+        width: 45%;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+/* Large Desktop and Above */
+@media only screen and (min-width: 1200px) {
+    .header {
+        padding: 20px 0;
+    }
+
+    .portfolio h2 {
+        font-size: 36px;
+    }
+
+    .item {
+        width: 250px;
+        height: 250px;
+    }
+
+    .footer p {
+        font-size: 18px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
